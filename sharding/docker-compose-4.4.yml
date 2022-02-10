@@ -1,0 +1,119 @@
+version: '3.1'
+services:
+  mongos01:
+    image: mongo:4.4
+    container_name: mongos01
+    hostname: mongos01
+    volumes:
+      - ./mongos.conf:/etc/mongos.conf:ro
+    command: /usr/bin/mongos --config /etc/mongos.conf
+    restart: always
+  config01:
+    image: mongo:4.4
+    container_name: config01
+    hostname: config01
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/config01:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  config02:
+    image: mongo:4.4
+    container_name: config02
+    hostname: config02
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/config02:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  config03:
+    image: mongo:4.4
+    container_name: config03
+    hostname: config03
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/config03:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  aquila01:
+      image: mongo:4.4
+      container_name: aquila01
+      hostname: aquila01
+      volumes:
+        - ./mongod_aquila.conf:/etc/mongod.conf:ro
+        - /mnt/mongodata/aquila01:/data/db:rw
+      command: --config /etc/mongod.conf
+      restart: always
+  aquila02:
+    image: mongo:4.4
+    container_name: aquila02
+    hostname: aquila02
+    volumes:
+      - ./mongod_aquila.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/aquila02:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  aquila03:
+    image: mongo:4.4
+    container_name: aquila03
+    hostname: aquila03
+    volumes:
+      - ./mongod_aquila.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/aquila03:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  lyra01:
+    image: mongo:4.4
+    container_name: lyra01
+    hostname: lyra01
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/lyra01:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  lyra02:
+    image: mongo:4.4
+    container_name: lyra02
+    hostname: lyra02
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/lyra02:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  lyra03:
+    image: mongo:4.4
+    container_name: lyra03
+    hostname: lyra03
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/lyra03:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  cygnus01:
+    image: mongo:4.4
+    container_name: cygnus01
+    hostname: cygnus01
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/cygnus01:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  cygnus02:
+    image: mongo:4.4
+    container_name: cygnus02
+    hostname: cygnus02
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/cygnus02:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always
+  cygnus03:
+    image: mongo:4.4
+    container_name: cygnus03
+    hostname: cygnus03
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+      - /mnt/mongodata/cygnus03:/data/db:rw
+    command: --config /etc/mongod.conf
+    restart: always   
+  

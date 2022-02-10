@@ -1,0 +1,94 @@
+version: '3'
+services:
+  mongos01:
+    image: mongo-proxy
+    container_name: mongos01
+    hostname: mongos01
+    volumes:
+      - ./mongos.conf:/etc/mongos.conf:ro
+    restart: always
+  config01:
+    image: mongo-server
+    container_name: config01
+    hostname: config01
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+    restart: always
+  config02:
+    image: mongo-server
+    container_name: config02
+    hostname: config02
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+    restart: always
+  config03:
+    image: mongo-server
+    container_name: config03
+    hostname: config03
+    volumes:
+      - ./mongod_config.conf:/etc/mongod.conf:ro
+    restart: always
+  aquila01:
+    image: mongo-server
+    container_name: aquila01
+    hostname: aquila01
+    volumes:
+      - ./mongod_aquila.conf:/etc/mongod.conf:ro
+    restart: always
+  aquila02:
+    image: mongo-server
+    container_name: aquila02
+    hostname: aquila02
+    volumes:
+      - ./mongod_aquila.conf:/etc/mongod.conf:ro
+    restart: always
+  aquila03:
+    image: mongo-server
+    container_name: aquila03
+    hostname: aquila03
+    volumes:
+      - ./mongod_aquila.conf:/etc/mongod.conf:ro
+    restart: always
+  lyra01:
+    image: mongo-server
+    container_name: lyra01
+    hostname: lyra01
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+    restart: always
+  lyra02:
+    image: mongo-server
+    container_name: lyra02
+    hostname: lyra02
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+    restart: always
+  lyra03:
+    image: mongo-server
+    container_name: lyra03
+    hostname: lyra03
+    volumes:
+      - ./mongod_lyra.conf:/etc/mongod.conf:ro
+    restart: always
+  cygnus01:
+    image: mongo-server
+    container_name: cygnus01
+    hostname: cygnus01
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+    restart: always
+  cygnus02:
+    image: mongo-server
+    container_name: cygnus02
+    hostname: cygnus02
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+    restart: always
+  cygnus03:
+    image: mongo-server
+    container_name: cygnus03
+    hostname: cygnus03
+    volumes:
+      - ./mongod_cygnus.conf:/etc/mongod.conf:ro
+    restart: always   
+
